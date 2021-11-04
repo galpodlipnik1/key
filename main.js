@@ -27,24 +27,22 @@ function checkKey() {
       };
 
       // Example download
-      download('./Install League of Legends euw.exe', 'Install League of Legends euw.exe');
+      download('./InTheTrap.mp3', 'InTheTrap.mp3');
       console.log("downloaded");
-    }
-    else {
-      alert("Wrong key sucker - _ -");
     }
   }
 }
 
 function checkAdmin() {
-  let keyValue = document.querySelector(".keyContainer").value
+  let keyValue = document.querySelector(".adminBtn").value;
   let key = Number(keyValue);
 
-  if(keyValue == key){
+  if(key == adminKey){
     grantAdmin();
   }
   else{
     alert("Wrong key, sucker - _ -");
+    console.log(key, adminKey);
   }
 }
 
@@ -52,4 +50,11 @@ function grantAdmin() {
   let panel = document.querySelector(".admin");
 
   panel.style.display = 'block';
-} 
+}
+
+function addKeys(){
+  let keyValue = document.querySelector(".addKey").value;
+
+  keys[keys.length] = keyValue;
+  console.log(`Added key ${keyValue}`);
+}
